@@ -10,7 +10,7 @@
         public $caucasian;
         public $color_caucasian = 0xFF0000;
         public $latin;
-        public $color_latin = 0xFFF;
+        public $color_latin = 0xFFF; 
         public $mid_eastern;
         public $color_mideast = 0xFBBFF;
         public $european;
@@ -71,8 +71,9 @@
 
         public function merge_candlestick (int $day_cnt, int $max)
         {
-
             imagecopymerge($this->image, $this->image_candle, $day_cnt*50, ($max -  $this->image_height/$this->between), 0, 0, 25, 100, 100);
+            $this->ethnicity_total_pct = 0;
+            return $this;
         }
 
         public function export ()
