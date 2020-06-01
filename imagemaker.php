@@ -71,7 +71,7 @@
 
         public function merge_candlestick (int $day_cnt, int $max)
         {
-            imagecopymerge($this->image, $this->image_candle, $day_cnt*50, ($max -  $this->image_height/$this->between), 0, 0, 25, 100, 100);
+            imagecopymerge($this->image, $this->image_candle, $day_cnt*50, $max * ($this->between/$this->image_height), 0, 0, 25, 100, 100);
             $this->ethnicity_total_pct = 0;
             return $this;
         }
